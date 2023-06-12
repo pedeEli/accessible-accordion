@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.panel button {
+  @apply px-4 py-2 w-full text-start focus-visible:bg-white/20 hover:bg-white/20 outline-none;
+}
+.panel section > div {
+  @apply px-4 py-2;
+}
+
+.panel {
+  @apply bg-orange-700 overflow-hidden;
+  transition: margin 300ms ease;
+}
+.panel:first-child {
+  @apply rounded-t-md;
+}
+.panel:last-child {
+  @apply rounded-b-md;
+}
+[data-panel-open="true"]:not(:last-child) {
+  @apply mb-4;
+}
+[data-panel-open="true"]:not(:first-child) {
+  @apply mt-4;
+}
